@@ -1,0 +1,1 @@
+NEON CORE\n\nOpen index.html in your browser to run.\nProject files: index.html, style.css, script.js.\n

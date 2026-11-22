@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON CORE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-grid"></div>
+    <div class="particles" id="particles"></div>
+    <main class="container">
+        <header class="header">
+            <div class="logo"><span class="logo-icon">◈</span> NEON CORE</div>
+            <div class="system-status"><span class="status-dot"></span> SYSTEM ONLINE</div>
+        </header>
+        <section class="main-section">
+            <div class="info-panel">
+                <p class="label">REACTOR CONTROL</p>
+                <h1>Energy<br>Core</h1>
+                <p class="description">Керування енергетичним ядром. Запускайте, зупиняйте та змінюйте режими системи.</p>
+                <div class="status-box">
+                    <div class="status-item"><span>STATUS</span><strong id="statusText">STANDBY</strong></div>
+                    <div class="status-item"><span>MODE</span><strong id="modeText">NORMAL</strong></div>
+                    <div class="status-item"><span>POWER</span><strong id="powerText">0%</strong></div>
+                </div>
+            </div>
+            <div class="reactor-area">
+                <div class="reactor" id="reactor">
+                    <div class="ring ring-1"></div><div class="ring ring-2"></div>
+                    <div class="ring ring-3"></div><div class="ring ring-4"></div>
+                    <div class="core"><div class="core-inner"></div></div>
+                </div>
+                <div class="reactor-caption"><span class="caption-line"></span><span>ENERGY REACTOR</span><span class="caption-line"></span></div>
+            </div>
+            <div class="controls-panel">
+                <p class="label">CONTROL PANEL</p><h2>System Controls</h2>
+                <button id="startBtn" class="control-btn start-btn"><span>▶</span> START</button>
+                <button id="pauseBtn" class="control-btn pause-btn"><span>Ⅱ</span> PAUSE</button>
+                <button id="resetBtn" class="control-btn reset-btn"><span>↻</span> RESET</button>
+                <button id="modeBtn" class="control-btn mode-btn"><span>◈</span> CHANGE MODE</button>
+                <button id="speedBtn" class="control-btn speed-btn"><span>⚡</span> SPEED: <span id="speedText">1x</span></button>
+                <div class="power-bar-container">
+                    <div class="power-header"><span>ENERGY LEVEL</span><span id="powerValue">0%</span></div>
+                    <div class="power-bar"><div class="power-fill" id="powerFill"></div></div>
+                </div>
+            </div>
+        </section>
+        <footer><span>NEON CORE // INTERACTIVE SYSTEM</span><span>FRONTEND JAVASCRIPT</span></footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;background:#050810;color:#e5f4ff;font-family:Arial,sans-serif;overflow-x:hidden}
+.background-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,255,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.container{max-width:1400px;margin:auto;padding:35px;position:relative;z-index:2}
+.header{display:flex;justify-content:space-between;align-items:center;padding-bottom:25px;border-bottom:1px solid rgba(0,255,255,.15)}
+.logo{font-size:24px;font-weight:bold;letter-spacing:4px;color:#fff}.logo-icon{color:#00ffff;margin-right:10px}
+.system-status{color:#00ff9d;font-size:12px;letter-spacing:2px}.status-dot{display:inline-block;width:8px;height:8px;background:#00ff9d;border-radius:50%;margin-right:8px;box-shadow:0 0 10px #00ff9d}
+.main-section{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:30px;align-items:center;min-height:700px}
+.label{color:#00ffff;letter-spacing:3px;font-size:12px;margin-bottom:20px}
+.info-panel h1{font-size:60px;line-height:1.05;margin-bottom:20px;text-shadow:0 0 20px rgba(0,255,255,.2)}
+.description{color:#8c9bb0;line-height:1.7;max-width:300px;font-size:14px}
+.status-box{margin-top:40px;border-left:2px solid #00ffff;padding-left:15px;display:flex;flex-direction:column;gap:20px}
+.status-item{display:flex;flex-direction:column;gap:8px}.status-item span{color:#69778c;font-size:11px;letter-spacing:2px}.status-item strong{color:#00ffff;font-size:15px;letter-spacing:2px}
+.reactor-area{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.reactor{width:350px;height:350px;position:relative;display:flex;align-items:center;justify-content:center}
+.ring{position:absolute;border-radius:50%;border:2px solid rgba(0,255,255,.3);transition:all .5s ease}
+.ring-1{width:100%;height:100%;border-top-color:#00ffff;border-bottom-color:#00ffff}
+.ring-2{width:82%;height:82%;border-color:rgba(0,150,255,.5);border-left-color:#00ffff}
+.ring-3{width:65%;height:65%;border-color:rgba(0,255,255,.2);border-right-color:#00ffff}
+.ring-4{width:50%;height:50%;border-color:rgba(0,150,255,.4);border-top-color:#00ffff}
+.core{width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#fff 0%,#00ffff 20%,#0066ff 60%,#001133 100%);box-shadow:0 0 30px #00ffff,0 0 60px #0088ff,0 0 100px rgba(0,255,255,.5);transition:all .5s ease}
+.core-inner{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.8),transparent 70%)}
+.reactor-caption{margin-top:40px;display:flex;align-items:center;gap:15px;color:#00ffff;font-size:12px;letter-spacing:4px}
+.caption-line{width:40px;height:1px;background:#00ffff;opacity:.5}
+.controls-panel h2{font-size:24px;margin-bottom:25px}
+.control-btn{display:block;width:100%;padding:15px;margin-bottom:12px;background:rgba(0,255,255,.03);border:1px solid rgba(0,255,255,.3);color:#e5f4ff;text-align:left;cursor:pointer;letter-spacing:2px;font-size:13px;transition:all .3s ease}
+.control-btn span{margin-right:10px}.control-btn:hover{transform:translateX(5px);background:rgba(0,255,255,.1);box-shadow:0 0 20px rgba(0,255,255,.1)}
+.start-btn:hover{border-color:#00ff9d;color:#00ff9d}.pause-btn:hover{border-color:#ffaa00;color:#ffaa00}.reset-btn:hover{border-color:#ff4466;color:#ff4466}.mode-btn:hover{border-color:#a855ff;color:#a855ff}.speed-btn:hover{border-color:#00ffff;color:#00ffff}
+.power-bar-container{margin-top:35px}.power-header{display:flex;justify-content:space-between;color:#8c9bb0;font-size:11px;letter-spacing:2px;margin-bottom:10px}.power-header span:last-child{color:#00ffff}
+.power-bar{width:100%;height:8px;background:#101a29;overflow:hidden}.power-fill{width:0%;height:100%;background:linear-gradient(90deg,#0066ff,#00ffff);box-shadow:0 0 15px #00ffff;transition:width .2s ease}
+footer{display:flex;justify-content:space-between;padding-top:25px;border-top:1px solid rgba(0,255,255,.15);color:#46566d;font-size:11px;letter-spacing:2px}
+.particles{position:fixed;inset:0;pointer-events:none;z-index:1}.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:#00ffff;box-shadow:0 0 10px #00ffff;animation:float 5s linear infinite}
+@keyframes float{0%{transform:translateY(100vh);opacity:0}50%{opacity:1}100%{transform:translateY(-20px);opacity:0}}
+.reactor.running .ring-1{animation:rotate 8s linear infinite}.reactor.running .ring-2{animation:rotate-reverse 6s linear infinite}.reactor.running .ring-3{animation:rotate 4s linear infinite}.reactor.running .ring-4{animation:rotate-reverse 3s linear infinite}.reactor.running .core{animation:pulse 2s ease-in-out infinite}
+@keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes rotate-reverse{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.reactor.overdrive .ring{border-color:rgba(255,100,0,.5)}
+.reactor.overdrive .core{background:radial-gradient(circle,#fff 0%,#ffcc00 20%,#ff5500 60%,#440000 100%);box-shadow:0 0 30px #ff8800,0 0 60px #ff4400,0 0 100px rgba(255,100,0,.5)}
+.reactor.overdrive.running .core{animation:pulse .7s ease-in-out infinite}
+@media(max-width:1000px){.main-section{grid-template-columns:1fr 1fr}.reactor-area{grid-column:span 2;grid-row:1}.info-panel{grid-row:2}.controls-panel{grid-row:2}}
+@media(max-width:650px){.container{padding:20px}.main-section{display:flex;flex-direction:column;gap:50px;padding:50px 0}.reactor{width:280px;height:280px}.info-panel,.controls-panel{width:100%}.info-panel h1{font-size:45px}footer{flex-direction:column;gap:15px}}
